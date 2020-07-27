@@ -26,6 +26,18 @@
 		methods:{
 			chanageRow(index){
 				this.currentIndex=index;
+				//获取类型
+				let type = null;
+				switch(index){
+					case 0:
+						type='pop';break;
+					case 1:
+						type='sell';break;
+					case 2:
+						type='news';break;
+				}
+				//发射事件
+				this.$emit("rowchanage",type);
 			}
 		}
 	}
